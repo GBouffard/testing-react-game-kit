@@ -1,9 +1,6 @@
-import React, { Component } from "react";
+import React from "react";
+import Game from "./components/game";
 
-class App extends Component {
-  render() {
-    return <div>Placeholder to test react-game-kit</div>;
-  }
-}
+const App = () => <Game />;
 
 export default App;
