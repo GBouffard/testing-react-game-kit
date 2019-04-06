@@ -13,7 +13,8 @@ class Game extends Component {
       this.keyListener.LEFT,
       this.keyListener.RIGHT,
       this.keyListener.UP,
-      this.keyListener.DOWN
+      this.keyListener.DOWN,
+      this.keyListener.SPACE
     ]);
   }
 
@@ -24,8 +25,9 @@ class Game extends Component {
   render() {
     return (
       <Loop>
-        <Stage style={{ background: "#747136" }}>
+        <Stage>
           <World
+            onInit={this.physicsInit}
             gravity={{
               x: 0,
               y: 0.001,

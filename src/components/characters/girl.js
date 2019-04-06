@@ -47,7 +47,10 @@ class Girl extends Component {
       characterState = 4;
     } else if (keys.isDown(keys.DOWN)) {
       Matter.Body.setVelocity(body, { x: 0, y: 1 });
+      // Matter.Body.set(body, "friction", 0.0001);
       characterState = 1;
+    } else if (keys.isDown(keys.SPACE)) {
+      Matter.Body.applyForce(body, { x, y }, { x: 0, y: -0.01 });
     }
 
     this.setState({ characterState });
