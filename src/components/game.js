@@ -1,7 +1,135 @@
 import React, { Component } from "react";
-import { Loop, Stage, World, KeyListener } from "react-game-kit";
+import { Loop, Stage, World, TileMap, KeyListener } from "react-game-kit";
 
 import Girl from "./characters/girl";
+
+const baseUrl = process.env.PUBLIC_URL;
+
+const arrOne = [
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  1,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  1,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  1,
+  1,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  1,
+  0,
+  1,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  1,
+  0,
+  0,
+  0
+];
+
+const arrTwo = [
+  1,
+  1,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  1,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  1,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  1,
+  0,
+  0,
+  1,
+  1,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  1,
+  0,
+  0,
+  0,
+  0,
+  1,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0
+];
 
 class Game extends Component {
   constructor() {
@@ -37,6 +165,24 @@ class Game extends Component {
               scale: 0.01
             }}
           >
+            <TileMap
+              style={{}}
+              src={`${baseUrl}/assets/star.png`}
+              sourceWidth={32}
+              tileSize={32}
+              columns={6}
+              rows={10}
+              layers={[arrOne]}
+            />
+            <TileMap
+              style={{}}
+              src={`${baseUrl}/assets/heart.png`}
+              sourceWidth={32}
+              tileSize={32}
+              columns={6}
+              rows={10}
+              layers={[arrTwo]}
+            />
             <Girl keys={this.keyListener} />
           </World>
         </Stage>
