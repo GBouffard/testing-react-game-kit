@@ -8,6 +8,9 @@ class Game extends Component {
     super();
     this.keyListener = new KeyListener();
   }
+
+  // react-game-kit/src/utils/key-listener.js
+  // seems to only deal with the 5 following keys
   componentDidMount() {
     this.keyListener.subscribe([
       this.keyListener.LEFT,

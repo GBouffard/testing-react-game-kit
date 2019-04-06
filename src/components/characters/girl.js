@@ -50,7 +50,15 @@ class Girl extends Component {
       // Matter.Body.set(body, "friction", 0.0001);
       characterState = 1;
     } else if (keys.isDown(keys.SPACE)) {
+      // A jump movement: Matter.Body.applyForce(body, position, force)
       Matter.Body.applyForce(body, { x, y }, { x: 0, y: -0.01 });
+
+      /*to slide of x & y without imparting any velocity.
+       Matter.Body.translate(body, { x: 10, y: 10 });
+      
+       If we wanted to do teleportation:
+      Matter.Body.setPosition(body, { x: 200, y: 200 });
+      */
     }
 
     this.setState({ characterState });
