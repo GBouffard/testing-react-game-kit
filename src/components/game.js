@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Loop, Stage, World, TileMap, KeyListener } from "react-game-kit";
+// import Matter from "matter-js";
 
 import Girl from "./characters/girl";
 
@@ -153,6 +154,48 @@ class Game extends Component {
     this.keyListener.unsubscribe();
   }
 
+  // physicsInit(engine) {
+  //   const world = engine.world;
+  //   const ground = Matter.Bodies.rectangle(512, 448, 64, 64, {
+  //     isStatic: true,
+  //     label: "trap",
+  //     density: 0.04,
+  //     friction: 1,
+  //     frictionAir: 0.00001,
+  //     restitution: 0.6,
+  //     render: {
+  //       fillStyle: "transparent",
+  //       strokeStyle: "black",
+  //       lineWidth: 2,
+  //       sprite: {
+  //         texture: "images/base.png"
+  //       }
+  //     }
+  //   });
+
+  //   const rightWall = Matter.Bodies.rectangle(3008, 288, 64, 576, {
+  //     isStatic: true
+  //   });
+
+  //   World.add(world, [
+  //     // walls
+  //     Matter.Bodies.rectangle(400, 0, 800, 50, { isStatic: true }),
+  //     Matter.Bodies.rectangle(400, 600, 800, 50, { isStatic: true }),
+  //     Matter.Bodies.rectangle(800, 300, 50, 600, { isStatic: true }),
+  //     Matter.Bodies.rectangle(0, 300, 50, 600, { isStatic: true })
+  //   ]);
+
+  //   Matter.World.addBody(engine.world, ground);
+  //   Matter.World.addBody(engine.world, rightWall);
+  // }
+  // physicsInit = engine => {
+  //   const ground = Matter.Bodies.rectangle(512, 448, 1024, 64, {
+  //     isStatic: false
+  //   });
+
+  //   Matter.World.addBody(engine.world, ground);
+  // };
+
   render() {
     return (
       <Loop>
@@ -178,7 +221,6 @@ class Game extends Component {
               style={{}}
               src={`${baseUrl}/assets/heart.png`}
               sourceWidth={32}
-              tileSize={32}
               columns={6}
               rows={10}
               layers={[arrTwo]}
